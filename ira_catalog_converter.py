@@ -38,22 +38,27 @@ class IRACatalogConverter:
 
     def _clean_text(self, text):
         if isinstance(text, str):
-            return re.sub(r'\s+', ' ', text.strip())
+            return re.sub(r'\s+', ' ', text.strip().replace("..", "."))
         return text
 
-    def _normalize_date(self, date_str):
-        try:
-            date_str = date_str.lower().replace('.-', '-').replace('s/f.', 'fecha desconocida')
-            if re.match(r'^\d{4}$', date_str):
-                return f"{date_str}-01-01"
-            return datetime.strptime(date_str, "%Y-%b-%d").strftime("%Y-%m-%d")
-        except:
-            return "fecha inválida"
+    def _clean_fecha_topica(self, text):
+        if isinstance(text, str):
+            return text.strip().rstrip('.')
+        return text
+
+    def _extract_fecha_rango(self, texto_fecha):
+        """Extrae fecha de inicio y fin si es un rango (ej. '1836-Mar.-14/1852-Ago.-20')"""
+        if not isinstance(texto_fecha, str) or '/' not in texto_fecha:
+            return None, None
+        partes = texto_fecha.split('/')
+        if len(partes) != 2:
+            return None, None
+        return partes[0].strip(), partes[1].strip()
 
     def process_excel(self, filepath):
         try:
             logger.info(f"📄 Procesando archivo: {filepath}")
-            df = pd.read_excel(filepath, sheet_name=0, dtype=str)  # Usa primera hoja
+            df = pd.read_excel(filepath, sheet_name=0, dtype=str)
             df = self._rename_columns(df)
 
             logger.info(f"🔧 Limpiando texto en columnas clave...")
@@ -61,10 +66,15 @@ class IRACatalogConverter:
                 if col in df.columns:
                     df[col] = df[col].apply(self._clean_text)
 
+            if 'fecha_topica' in df.columns:
+                df['fecha_topica'] = df['fecha_topica'].apply(self._clean_fecha_topica)
+
             if 'fecha_cronica' in df.columns:
-                logger.info(f"📅 Normalizando fechas...")
-                tqdm.pandas(desc="⏳ Normalizando fechas")
-                df['fecha_cronica_iso'] = df['fecha_cronica'].progress_apply(self._normalize_date)
+                logger.info("📆 Extrayendo fechas de inicio y fin...")
+                tqdm.pandas(desc="⏳ Extrayendo rangos de fechas")
+                df[['fecha_inicio', 'fecha_fin']] = df['fecha_cronica'].progress_apply(
+                    lambda x: pd.Series(self._extract_fecha_rango(x))
+                )
 
             df['__fuente__'] = os.path.basename(filepath)
             logger.info(f"✅ Procesamiento completo: {filepath} ({len(df)} filas)")
@@ -91,3 +101,4 @@ class IRACatalogConverter:
         logger.info("📦 Combinando catálogos con columnas comunes...")
         common_cols = list(set.intersection(*(set(df.columns) for df in dataframes)))
         return pd.concat([df[common_cols] for df in dataframes], ignore_index=True)
+
