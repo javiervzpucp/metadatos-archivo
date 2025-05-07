@@ -10,6 +10,7 @@ from ira_catalog_converter import IRACatalogConverter
 converter = IRACatalogConverter(data_folder="datos")
 df = converter.combine_excels()
 df.to_csv("catalogo_completo_estandarizado.csv", index=False, encoding="utf-8-sig")
+df.to_excel("catalogo_completo_estandarizado.xlsx")
 
 
 # Vista previa
