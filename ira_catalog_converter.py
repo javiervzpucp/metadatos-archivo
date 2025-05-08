@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-Conversor de catálogos históricos a formato estandarizado con registro de avance.
-Asume archivos Excel en carpeta 'datos/' y usa la primera hoja.
+Conversor de catálogos históricos a formato estandarizado con normalización de fechas.
+Extrae fecha_inicio y fecha_fin con regla o LLM, y convierte a ISO 8601.
 """
 
 import pandas as pd
@@ -13,10 +13,12 @@ from dotenv import load_dotenv
 from tqdm import tqdm
 import warnings
 
+from langchain_community.llms import HuggingFaceEndpoint
+
 warnings.simplefilter("ignore", category=FutureWarning)
 load_dotenv()
 
-# Configuración del logger
+# Configurar logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
@@ -33,6 +35,14 @@ class IRACatalogConverter:
             'observaciones': 'observaciones'
         }
 
+        # LLM para normalización de fechas complejas
+        self.llm = HuggingFaceEndpoint(
+            repo_id="mistralai/Mixtral-8x7B-Instruct-v0.1",
+            huggingfacehub_api_token=os.getenv("HF_API_TOKEN"),
+            temperature=0.3,
+            max_new_tokens=100
+        )
+
     def _rename_columns(self, df):
         return df.rename(columns=lambda c: self.column_map.get(c.strip().lower(), c.strip().lower().replace(" ", "_")))
 
@@ -46,14 +56,58 @@ class IRACatalogConverter:
             return text.strip().rstrip('.')
         return text
 
+    def _to_iso(self, texto):
+        """Convierte fechas como '1836-Mar.-14' a '1836-03-14'"""
+        try:
+            meses = {
+                'ene.': '01', 'feb.': '02', 'mar.': '03', 'abr.': '04', 'may.': '05',
+                'jun.': '06', 'jul.': '07', 'ago.': '08', 'sep.': '09', 'oct.': '10',
+                'nov.': '11', 'dic.': '12'
+            }
+            for abbr, num in meses.items():
+                texto = texto.lower().replace(abbr, num)
+            texto = texto.replace('.', '').replace(' ', '')
+            if re.match(r'^\d{4}-\d{1,2}-\d{1,2}$', texto):
+                parts = texto.split('-')
+                return '-'.join([parts[0]] + [p.zfill(2) for p in parts[1:]])
+            return None
+        except:
+            return None
+
     def _extract_fecha_rango(self, texto_fecha):
-        """Extrae fecha de inicio y fin si es un rango (ej. '1836-Mar.-14/1852-Ago.-20')"""
-        if not isinstance(texto_fecha, str) or '/' not in texto_fecha:
+        """Extrae fecha_inicio y fecha_fin. Usa regla con '/' o fallback con LLM."""
+        if not isinstance(texto_fecha, str) or not texto_fecha.strip():
             return None, None
-        partes = texto_fecha.split('/')
-        if len(partes) != 2:
+
+        texto_fecha = texto_fecha.strip()
+
+        # Regla: separador explícito
+        if '/' in texto_fecha:
+            partes = texto_fecha.split('/')
+            if len(partes) == 2:
+                return partes[0].strip(), partes[1].strip()
+
+        # Si solo hay una fecha legible, repítela como inicio
+        if re.search(r"\d{4}", texto_fecha):
+            return texto_fecha, None
+
+        # Fallback con LLM
+        prompt = f"""Extrae la fecha de inicio y la fecha de fin de este texto en español. 
+Devuelve solo dos fechas en formato ISO 8601, separadas por coma.
+
+Ejemplo:
+Entrada: '1836-Mar.-14/1852-Ago.-20'
+Salida: 1836-03-14,1852-08-20
+
+Entrada: {texto_fecha}
+Salida:"""
+        try:
+            response = self.llm.invoke(prompt).strip()
+            fechas = [f.strip() for f in response.split(',') if re.match(r"\d{4}-\d{2}-\d{2}", f.strip())]
+            return (fechas + [None, None])[:2]
+        except Exception as e:
+            logger.warning(f"⚠️ LLM no pudo interpretar fecha: '{texto_fecha}' → {str(e)}")
             return None, None
-        return partes[0].strip(), partes[1].strip()
 
     def process_excel(self, filepath):
         try:
@@ -71,10 +125,14 @@ class IRACatalogConverter:
 
             if 'fecha_cronica' in df.columns:
                 logger.info("📆 Extrayendo fechas de inicio y fin...")
-                tqdm.pandas(desc="⏳ Extrayendo rangos de fechas")
-                df[['fecha_inicio', 'fecha_fin']] = df['fecha_cronica'].progress_apply(
-                    lambda x: pd.Series(self._extract_fecha_rango(x))
-                )
+                tqdm.pandas(desc="⏳ Extrayendo fechas crónicas")
+                fechas = df['fecha_cronica'].progress_apply(lambda x: pd.Series(self._extract_fecha_rango(x)))
+                fechas.columns = ['fecha_inicio', 'fecha_fin']
+                df = pd.concat([df, fechas], axis=1)
+
+                logger.info("📆 Normalizando a formato ISO 8601...")
+                df['fecha_inicio_iso'] = df['fecha_inicio'].apply(self._to_iso)
+                df['fecha_fin_iso'] = df['fecha_fin'].apply(self._to_iso)
 
             df['__fuente__'] = os.path.basename(filepath)
             logger.info(f"✅ Procesamiento completo: {filepath} ({len(df)} filas)")
@@ -101,4 +159,3 @@ class IRACatalogConverter:
         logger.info("📦 Combinando catálogos con columnas comunes...")
         common_cols = list(set.intersection(*(set(df.columns) for df in dataframes)))
         return pd.concat([df[common_cols] for df in dataframes], ignore_index=True)
-
