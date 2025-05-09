@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-Extracción de palabras clave con modelo LLM (Mixtral) desde un catálogo estandarizado.
-Usa prompting para identificar personas, lugares, instituciones, eventos y tipos documentales.
+Extracción de palabras clave con modelo LLM (Mistral-7B-Instruct) desde un catálogo estandarizado.
+Filtra personas, lugares, instituciones y eventos históricos. Devuelve solo las 3 más representativas.
 """
 
 import pandas as pd
@@ -20,7 +20,7 @@ HF_API_TOKEN = os.getenv("HF_API_TOKEN")
 
 # Inicializar modelo LLM
 llm = HuggingFaceEndpoint(
-    repo_id="mistralai/Mixtral-8x7B-Instruct-v0.1",
+    repo_id="mistralai/Mistral-7B-Instruct-v0.3",
     huggingfacehub_api_token=HF_API_TOKEN,
     temperature=0.3,
     max_new_tokens=100
@@ -30,22 +30,18 @@ def extract_keywords_with_llm(texto_fuente):
     if not isinstance(texto_fuente, str) or not texto_fuente.strip():
         return []
 
-    prompt = f"""Extrae solo las palabras clave del siguiente texto archivístico. 
-Incluye nombres de personas, lugares, instituciones, eventos históricos y tipos documentales. 
-NO incluyas frases completas ni repitas el texto original. 
-Devuelve el resultado como una lista de Python con comillas y comas, por ejemplo:
-
-Texto: Lima Diploma de miembro de la Legión del Mérito Militar, expedido por el gobierno de Nicolás de Piérola en favor de José Mariano Alvizuri por su participación en el combate de Pacochas, el 29 de mayo de 1877.
-Palabras clave: ["Lima", "Legión del Mérito Militar", "Nicolás de Piérola", "José Mariano Alvizuri", "combate de Pacochas", "1877", "Diploma"]
+    prompt = f"""Extrae únicamente las palabras clave del siguiente texto archivístico.
+Incluye solo nombres de personas, lugares, instituciones o eventos históricos. 
+No incluyas términos genéricos como 'documento', 'carta', 'escritura', ni frases completas.
+Devuelve una lista separada por comas, sin explicaciones, y ordenada por relevancia (lo más importante primero). Solo muestra un máximo de 3 palabras clave.
 
 Texto: {texto_fuente}
 Palabras clave:"""
 
-
     try:
         response = llm.invoke(prompt).strip()
         keywords = [kw.strip() for kw in response.split(",") if kw.strip()]
-        return keywords
+        return keywords[:3]
     except Exception as e:
         print(f"⚠️ Error al usar LLM para texto: {e}")
         return []
@@ -60,7 +56,7 @@ def main():
     print("🧩 Combinando campos 'fecha_topica', 'descripcion' y 'observaciones'...")
     df["texto_fuente"] = df[["fecha_topica", "descripcion", "observaciones"]].fillna("").agg(" ".join, axis=1)
 
-    print("🧠 Extrayendo keywords con Mixtral...")
+    print("🧠 Extrayendo keywords con LLM...")
     tqdm.pandas(desc="⏳ Extrayendo con LLM")
     df["keywords_extraidas"] = df["texto_fuente"].progress_apply(extract_keywords_with_llm)
 
