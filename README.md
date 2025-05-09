@@ -258,50 +258,85 @@ Esto permite construir sistemas avanzados de recuperación de información para 
 ```
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#f0f8ff', 'edgeLabelBackground':'#fff'}}}%%
-graph LR
-    A[📂 Excel/CSV<br><sub>Documentos históricos en bruto</sub>] --> B[🧹 Fase 1: Estandarización]
-    B --> C[🤖 Fase 2: Extracción IA]
-    C --> D[🏷️ Fase 3: SKOS]
-    D --> E[🕸️ Fase 4: Grafo]
-    E --> F[🌐 Sistema Interoperable]
+%%{init: {'theme': 'neutral', 'fontFamily': 'Arial', 'gantt': {'barHeight': 20}}}%%
+flowchart TD
+    A[📦 Excel/CSV<br><sub>Datos brutos históricos</sub>] --> B[1️⃣ FASE 1<br>Estandarización]
+    B --> C[2️⃣ FASE 2<br>Extracción IA]
+    C --> D[3️⃣ FASE 3<br>Normalización SKOS]
+    D --> E[4️⃣ FASE 4<br>Grafo de Conocimiento]
+    E --> F[5️⃣ FASE 5<br>Generación de Metadatos]
+    F --> G[🏛️ Sistema Final]
 
-    click B "#fase1" "Normalización de fechas/columnas"
-    click C "#fase2" "3 keywords por documento"
-    click D "#fase3" "Link a vocabularios"
-    click E "#fase4" "Exportar a RDF/Neo4j"
+    subgraph "PROCESO COMPLETO"
+    B -->|Unificar columnas| B1["• fecha<br>• descripción"]
+    C -->|Extraer| C1["• Personas<br>• Lugares<br>• Eventos"]
+    D -->|Enlazar| D1["• Tesauros<br>• GeoNames<br>• Wikidata"]
+    E -->|Exportar| E1["• RDF<br>• Neo4j<br>• GraphDB"]
+    F -->|Autocompletar| F1["• Categorías<br>• Relaciones<br>• Contexto"]
+    end
 
-    style A fill:#e3f2fd,stroke:#1565c0
-    style F fill:#e8f5e9,stroke:#2e7d32
+    style A fill:#e6f3ff,stroke:#0066cc
+    style G fill:#e6ffe6,stroke:#009900
 ```
-**Detalle de Fases**  
-<div id="fase1"></div>
-### 🧹 Fase 1: Estandarización  
+### Detalle ampliado por fase
+
+<details>
+<summary>📌 <b>1️⃣ FASE 1: Estandarización</b></summary>
 ```diff
+# Normalización de datos
 + 1836-Mar.-14 → 1836-03-14
-+ Unificar columnas (fecha/descripción)
++ Unificación de formatos de texto
 ```
+</details>
 
-<div id="fase2"></div>
-### 🤖 Fase 2: Extracción IA  
+<details>
+<summary>🔍 <b>2️⃣ FASE 2: Extracción IA</b></summary>
 ```python
-["Lima", "combate de Pacochas", "José Mariano Alvizuri"]  # Ejemplo output
+# Ejemplo output LLM
+keywords = [
+    "Lima", 
+    "combate de Pacochas", 
+    "José Mariano Alvizuri"
+]
 ```
+</details>
 
-<div id="fase3"></div>
-### 🏷️ Fase 3: SKOS  
+<details>
+<summary>🏷️ <b>3️⃣ FASE 3: SKOS</b></summary>
 ```sparql
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-SELECT ?concept WHERE { ?concept skos:prefLabel "combate de Pacochas"@es }
+CONSTRUCT {
+    ?concept skos:prefLabel "combate de Pacochas"@es ;
+             skos:exactMatch <http://ira.pucp.edu.pe/eventos/123> .
+}
 ```
+</details>
 
-<div id="fase4"></div>
-### 🕸️ Fase 4: Grafo  
+<details>
+<summary>🕸️ <b>4️⃣ FASE 4: Grafo</b></summary>
 ```json
 {
-  "nodos": ["Documento123", "Lima", "Independencia"],
-  "relaciones": ["menciona", "ocurrió_en"]
+    "nodos": ["Doc_123", "Arequipa", "Reclutamiento"],
+    "relaciones": [
+        {"from": "Doc_123", "to": "Arequipa", "type": "menciona_lugar"},
+        {"from": "Doc_123", "to": "Reclutamiento", "type": "trata_evento"}
+    ]
 }
+```
+</details>
+
+<details>
+<summary>✨ <b>5️⃣ FASE 5: Metadatos</b></summary>
+```yaml
+autocompletado:
+  - sugerencias: 
+      - evento: "Guerra de Independencia"
+      - categoría: "Conflictos bélicos/Siglo XIX"
+  - fuentes: 
+      - wikidata: Q12345
+      - geonames: 6252001
+```
+</details>
 ```
 
 ---
