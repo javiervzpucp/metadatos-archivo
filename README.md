@@ -256,87 +256,67 @@ Esto permite construir sistemas avanzados de recuperación de información para 
          - categoría: Conflictos bélicos / Siglo XIX
 
 ```
+---
 
 ```mermaid
-%%{init: {'theme': 'neutral', 'fontFamily': 'Arial', 'gantt': {'barHeight': 20}}}%%
 flowchart TD
-    A[📦 Excel/CSV<br><sub>Datos brutos históricos</sub>] --> B[1️⃣ FASE 1<br>Estandarización]
-    B --> C[2️⃣ FASE 2<br>Extracción IA]
-    C --> D[3️⃣ FASE 3<br>Normalización SKOS]
-    D --> E[4️⃣ FASE 4<br>Grafo de Conocimiento]
-    E --> F[5️⃣ FASE 5<br>Generación de Metadatos]
-    F --> G[🏛️ Sistema Final]
-
-    subgraph "PROCESO COMPLETO"
-    B -->|Unificar columnas| B1["• fecha<br>• descripción"]
-    C -->|Extraer| C1["• Personas<br>• Lugares<br>• Eventos"]
-    D -->|Enlazar| D1["• Tesauros<br>• GeoNames<br>• Wikidata"]
-    E -->|Exportar| E1["• RDF<br>• Neo4j<br>• GraphDB"]
-    F -->|Autocompletar| F1["• Categorías<br>• Relaciones<br>• Contexto"]
-    end
+    A[📦 Excel/CSV] --> B[1️⃣ Estandarización]
+    B --> C[2️⃣ Extracción IA]
+    C --> D[3️⃣ Normalización SKOS]
+    D --> E[4️⃣ Grafo]
+    E --> F[5️⃣ Metadatos]
+    F --> G[🏛️ Sistema]
 
     style A fill:#e6f3ff,stroke:#0066cc
     style G fill:#e6ffe6,stroke:#009900
 ```
-### Detalle ampliado por fase
 
-<details>
-<summary>📌 <b>1️⃣ FASE 1: Estandarización</b></summary>
+### 📌 1️⃣ FASE 1: Estandarización
 ```diff
-# Normalización de datos
-+ 1836-Mar.-14 → 1836-03-14
-+ Unificación de formatos de texto
++ Columnas unificadas: fecha, descripción
++ Normalización: 1836-Mar.-14 → 1836-03-14
 ```
-</details>
 
-<details>
-<summary>🔍 <b>2️⃣ FASE 2: Extracción IA</b></summary>
+### 🔍 2️⃣ FASE 2: Extracción IA
 ```python
-# Ejemplo output LLM
-keywords = [
-    "Lima", 
-    "combate de Pacochas", 
-    "José Mariano Alvizuri"
-]
+# Salida del LLM (ejemplo):
+keywords = ["Lima", "combate de Pacochas", "José Mariano Alvizuri"]
 ```
-</details>
 
-<details>
-<summary>🏷️ <b>3️⃣ FASE 3: SKOS</b></summary>
+### 🏷️ 3️⃣ FASE 3: Normalización SKOS
 ```sparql
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-CONSTRUCT {
-    ?concept skos:prefLabel "combate de Pacochas"@es ;
-             skos:exactMatch <http://ira.pucp.edu.pe/eventos/123> .
+SELECT ?concept WHERE {
+    ?concept skos:prefLabel "combate de Pacochas"@es
 }
 ```
-</details>
 
-<details>
-<summary>🕸️ <b>4️⃣ FASE 4: Grafo</b></summary>
+### 🕸️ 4️⃣ FASE 4: Grafo de Conocimiento
 ```json
 {
-    "nodos": ["Doc_123", "Arequipa", "Reclutamiento"],
-    "relaciones": [
-        {"from": "Doc_123", "to": "Arequipa", "type": "menciona_lugar"},
-        {"from": "Doc_123", "to": "Reclutamiento", "type": "trata_evento"}
-    ]
+  "nodos": ["Doc_123", "Arequipa", "1815"],
+  "relaciones": [
+    {"from": "Doc_123", "to": "Arequipa", "type": "menciona_lugar"}
+  ]
 }
 ```
-</details>
 
-<details>
-<summary>✨ <b>5️⃣ FASE 5: Metadatos</b></summary>
+### ✨ 5️⃣ FASE 5: Generación de Metadatos
 ```yaml
 autocompletado:
-  - sugerencias: 
-      - evento: "Guerra de Independencia"
-      - categoría: "Conflictos bélicos/Siglo XIX"
-  - fuentes: 
-      - wikidata: Q12345
-      - geonames: 6252001
+  sugerencias:
+    - evento: "Guerra de Independencia"
+    - categoría: "Conflictos bélicos/Siglo XIX"
+  fuentes_externas:
+    - wikidata: Q12345
+    - geonames: 6252001
 ```
-</details>
+
+### 🏛️ Sistema Final
+- **Búsqueda semántica** por temas/lugares
+- **Visualización** de redes históricas
+- **Exportación** a RDF/Neo4j
+- **Integración** con Wikidata/GeoNames
 
 
 ---
