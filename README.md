@@ -257,4 +257,51 @@ Esto permite construir sistemas avanzados de recuperación de información para 
 
 ```
 
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#f0f8ff', 'edgeLabelBackground':'#fff'}}}%%
+graph LR
+    A[📂 Excel/CSV<br><sub>Documentos históricos en bruto</sub>] --> B[🧹 Fase 1: Estandarización]
+    B --> C[🤖 Fase 2: Extracción IA]
+    C --> D[🏷️ Fase 3: SKOS]
+    D --> E[🕸️ Fase 4: Grafo]
+    E --> F[🌐 Sistema Interoperable]
+
+    click B "#fase1" "Normalización de fechas/columnas"
+    click C "#fase2" "3 keywords por documento"
+    click D "#fase3" "Link a vocabularios"
+    click E "#fase4" "Exportar a RDF/Neo4j"
+
+    style A fill:#e3f2fd,stroke:#1565c0
+    style F fill:#e8f5e9,stroke:#2e7d32
+```
+**Detalle de Fases**  
+<div id="fase1"></div>
+### 🧹 Fase 1: Estandarización  
+```diff
++ 1836-Mar.-14 → 1836-03-14
++ Unificar columnas (fecha/descripción)
+```
+
+<div id="fase2"></div>
+### 🤖 Fase 2: Extracción IA  
+```python
+["Lima", "combate de Pacochas", "José Mariano Alvizuri"]  # Ejemplo output
+```
+
+<div id="fase3"></div>
+### 🏷️ Fase 3: SKOS  
+```sparql
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+SELECT ?concept WHERE { ?concept skos:prefLabel "combate de Pacochas"@es }
+```
+
+<div id="fase4"></div>
+### 🕸️ Fase 4: Grafo  
+```json
+{
+  "nodos": ["Documento123", "Lima", "Independencia"],
+  "relaciones": ["menciona", "ocurrió_en"]
+}
+```
+
 ---
