@@ -127,12 +127,62 @@ Extrae hasta 3 palabras clave del siguiente texto. Incluye solo nombres de perso
 
 ## Usos del Grafo de Conocimiento
 
-1. Búsqueda semántica mejorada.
-2. Visualización de redes históricas.
-3. Generación de líneas de tiempo.
-4. Enriquecimiento con datos enlazados externos.
-5. Control de autoridad automatizado.
-6. Navegación facetada y jerárquica.
+### 1. Búsqueda semántica mejorada
+
+Permite encontrar documentos por conceptos relacionados y no solo por coincidencias exactas de texto. Por ejemplo, buscar “Virreinato del Perú” también puede devolver documentos relacionados con “Gobierno de Abascal”, “Reformas borbónicas” o “Virrey Amat” si están conectados mediante relaciones `skos:broader` o `skos:related`.
+
+### 2. Visualización de redes históricas
+
+Permite construir visualizaciones de relaciones entre personas, lugares, instituciones o eventos mencionados en los documentos. Estas redes ayudan a identificar actores centrales, rutas de circulación documental o alianzas políticas.
+
+Ejemplo:
+```
+José Mariano Alvizuri ── combate de Pacochas ── Nicolás de Piérola
+                  │
+               Lima
+```
+
+### 3. Generación de líneas de tiempo interactivas
+
+A partir de `fecha_inicio` y `fecha_fin` de los documentos, y su vinculación con lugares o eventos, es posible generar cronologías interactivas por personaje, institución o región.
+
+### 4. Enriquecimiento con datos enlazados externos
+
+Las entidades del grafo pueden conectarse a vocabularios externos como:
+- Wikidata (QIDs de personas, lugares, eventos)
+- GeoNames (coordenadas y jerarquías geográficas)
+- VIAF (autoridades normativas de bibliotecas)
+
+Esto permite ampliar la información automáticamente.
+
+### 5. Control de autoridad automatizado
+
+El grafo permite validar y corregir nombres, lugares e instituciones:
+- Detectar duplicados
+- Unificar variantes onomásticas
+- Relacionar sinónimos
+
+Esto es clave para sistemas archivísticos como ICA-AtoM, ArchivesSpace o para catálogos patrimoniales.
+
+### 6. Navegación facetada y jerárquica
+
+Gracias a las propiedades SKOS (`broader`, `narrower`, `related`) es posible implementar filtros temáticos:
+- Explorar desde "Colonialismo español" hacia "Reducciones indígenas", "Tributación indígena".
+- Filtrar documentos por tema, lugar o actor.
+
+### 7. Respuestas a preguntas complejas (RAG/QA)
+
+El grafo sirve como base estructural para responder preguntas con lógica compleja. Ejemplo:
+
+**Pregunta:**  
+“¿Qué personajes participaron en documentos producidos en el Cusco entre 1780 y 1783?”
+
+**Búsqueda estructurada:**  
+- place = Cusco  
+- fecha_inicio ≥ 1780, fecha_fin ≤ 1783  
+- prov:wasAssociatedWith → ?persona
+
+Esto permite construir sistemas avanzados de recuperación de información para investigadores o usuarios generales.
 
 ---
 
