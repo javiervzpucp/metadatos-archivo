@@ -260,74 +260,39 @@ Esto permite construir sistemas avanzados de recuperación de información para 
 
 ```mermaid
 flowchart TD
-    A[Fuente: Documentos históricos\n(Excel/CSV)] --> B[FASE 1\nEstandarización]
-    B -->|Normalización| B1[Formato fechas\nUnificación columnas]
-    
-    B --> C[FASE 2\nExtracción automática]
-    C -->|LLM| C1[Keywords: Personas\nLugares\nEventos]
-    
-    C --> D[FASE 3\nNormalización semántica]
-    D -->|SKOS| D1[Vocabularios controlados\nEnlaces GeoNames/Wikidata]
-    
-    D --> E[FASE 4\nGrafo de conocimiento]
-    E -->|RDF| E1[Nodos: Documentos\nRelaciones: Menciones]
-    
-    E --> F[FASE 5\nGeneración metadatos]
-    F -->|Autocompletado| F1[Categorías\nContexto histórico]
-    
-    F --> G[Sistema final\nBúsqueda semántica\nVisualización temporal]
+    %% Definición de nodos principales
+    A[Fuente de datos\nDocumentos históricos en bruto\n(Formatos: Excel/CSV)] --> B[FASE 1\nEstandarización del catálogo]
+    B --> C[FASE 2\nExtracción de entidades\ncon modelo LLM]
+    C --> D[FASE 3\nNormalización semántica\nTesauro SKOS]
+    D --> E[FASE 4\nConstrucción del\ngrafo de conocimiento]
+    E --> F[FASE 5\nGeneración automática\nde metadatos]
+    F --> G[Sistema de metadatos\nhistóricos interoperable]
 
-    classDef phase fill:#f0f7ff,stroke:#3a7bd5,stroke-width:2px
-    classDef data fill:#e6f7e6,stroke:#2e7d32
-    class A,G data
+    %% Subprocesos detallados
+    B --> B1[Unificación de columnas:\n-fecha\n-descripción\n-procedencia]
+    B --> B2[Normalización de:\n-Texto\n-Fechas\n-Nombres]
+    
+    C --> C1[Entidades extraídas:\n-Personas (35%)\n-Lugares (45%)\n-Eventos (20%)]
+    C --> C2[Ejemplo output:\n"Lima", "combate de Pacochas",\n"José Mariano Alvizuri"]
+    
+    D --> D1[Conexión a vocabularios:\n-Archivísticos\n-Geográficos\n-De eventos]
+    D --> D2[Ejemplo URI:\n<http://ira.pucp.edu.pe/eventos/123>]
+    
+    E --> E1[Formatos de exportación:\n-RDF\n-GraphDB\n-Neo4j\n-Wikibase]
+    E --> E2[Relaciones básicas:\n-menciona\n-ocurrió_en\n-participó]
+    
+    F --> F1[Autocompletado de:\n-Categorías\n-Contexto histórico\n-Relaciones]
+    F --> F2[Integraciones:\n-Wikidata\n-GeoNames\n-SNAC]
+
+    %% Estilos visuales
+    classDef source fill:#f8f9fa,stroke:#495057,stroke-width:2px
+    classDef phase fill:#e7f5ff,stroke:#228be6,stroke-width:2px
+    classDef subprocess fill:#f3f0ff,stroke:#7048e8,stroke-width:1.5px
+    classDef system fill:#ebfbee,stroke:#2b8a3e,stroke-width:2px
+
+    class A source
     class B,C,D,E,F phase
+    class B1,B2,C1,C2,D1,D2,E1,E2,F1,F2 subprocess
+    class G system
 ```
-
-**Detalle técnico por fase:**
-
-1. **FASE 1: Estandarización**  
-   - Entrada: Datos brutos en múltiples formatos  
-   - Proceso:  
-     ```python
-     def normalizar_fecha(fecha):
-         return fecha.strftime('%Y-%m-%d')  # 1836-Mar-14 → 1836-03-14
-     ```
-   - Salida: Dataset uniforme
-
-2. **FASE 2: Extracción automática**  
-   - Modelo: Transformer (BERT-like)  
-   - Output:  
-     ```json
-     {
-       "keywords": ["Lima", "Combate de Pacochas", "J.M. Alvizuri"],
-       "confianza": [0.92, 0.87, 0.78]
-     }
-     ```
-
-3. **FASE 3: Normalización semántica**  
-   - Ejemplo SPARQL:  
-     ```sparql
-     PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-     INSERT {
-         ?concept skos:exactMatch <http://ira.pucp.edu.pe/eventos/123>
-     }
-     WHERE {
-         ?concept skos:prefLabel "combate de Pacochas"@es
-     }
-     ```
-
-4. **FASE 4: Grafo de conocimiento**  
-   - Estructura:  
-     ```turtle
-     @prefix ex: <http://example.org/> .
-     ex:Doc123 ex:menciona ex:Arequipa ;
-               ex:trataEvento ex:ReclutamientoMilitar .
-     ```
-
-5. **FASE 5: Generación de metadatos**  
-   - Auto-completado basado en:  
-     - Frecuencia en el corpus  
-     - Relaciones en el grafo  
-     - Vocabularios externos
-
 ---
