@@ -189,19 +189,72 @@ Esto permite construir sistemas avanzados de recuperación de información para 
 ## Flujo General del Sistema
 
 ```
-┌────────────┐
-│ Excel/CSV  │
-└─────┬──────┘
-      ↓
-[FASE 1: Estandarización]
-      ↓
-[FASE 2: Extracción con LLM]
-      ↓
-[FASE 3: Normalización con Tesauro SKOS]
-      ↓
-[FASE 4: Grafo de Conocimiento]
-      ↓
-Sistema interoperable de metadatos históricos
++-----------------------+
+|       Excel/CSV       |  ← Documentos históricos en bruto
++-----------+-----------+
+            |
+            v
++-----------------------------------------------+
+|      FASE 1: Estandarización del Catálogo     |
++-----------------------------------------------+
+ • Unificación de columnas: 'fecha', 'descripción', etc.
+ • Normalización de texto y fechas:
+   (ej. 1836-Mar.-14 → 1852-Ago.-20)
+ • Resultado: archivo limpio y uniforme
+            |
+            v
++----------------------------------------------------------+
+|   FASE 2: Extracción de Palabras Clave con LLM           |
++----------------------------------------------------------+
+ • Uso de IA para extraer entidades clave:
+   (personas, lugares, eventos)
+ • Máximo 3 keywords por documento:
+   ["Lima", "combate de Pacochas", "José Mariano Alvizuri"]
+            |
+            v
++---------------------------------------------------------------+
+|   FASE 3: Normalización Semántica con Tesauro SKOS            |
++---------------------------------------------------------------+
+ • Asociación de keywords con conceptos normalizados
+ • Conexión con URIs de vocabularios:
+   archivísticos, geográficos, etc.
+ • Ejemplo: "combate de Pacochas" →
+   <http://ira.pucp.edu.pe/eventos/123>
+            |
+            v
++---------------------------------------------------------------+
+|      FASE 4: Construcción del Grafo de Conocimiento           |
++---------------------------------------------------------------+
+ • Representación como nodos:
+   documentos y entidades (personas, lugares, eventos)
+ • Relaciones: lugar, persona mencionada, evento
+ • Exportable a: RDF, GraphDB, Neo4j, Wikibase
+            |
+            v
++--------------------------------------------------------------------------+
+| SISTEMA DE METADATOS HISTÓRICOS INTEROPERABLE Y VIVO                     |
++--------------------------------------------------------------------------+
+ • Búsqueda semántica por tema/lugar/actor
+ • Visualización de redes históricas
+ • Generación de líneas de tiempo
+ • Enlace con fuentes externas: Wikidata, GeoNames
+            |
+            v
++--------------------------------------------------------------------------+
+| FASE 5: Uso del Grafo para Generar Metadatos                             |
++--------------------------------------------------------------------------+
+ • Al llegar un nuevo documento:
+     - Se extraen keywords preliminares
+     - Se comparan con nodos del grafo
+     - Se sugieren automáticamente: actores, eventos, lugares, categorías
+ • Ejemplo:
+     Texto: "Carta escrita en Arequipa sobre reclutamiento militar en 1815"
+     → keywords: ["Arequipa", "reclutamiento", "1815"]
+     → grafo sugiere:
+         - evento: Guerra de Independencia
+         - institución: Ejército Realista
+         - categoría: Conflictos bélicos / Siglo XIX
+
 ```
 
 ---
