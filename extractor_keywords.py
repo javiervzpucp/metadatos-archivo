@@ -1,12 +1,13 @@
 # -*- coding: utf-8 -*-
 """
-Extracción de palabras clave con modelo LLM (Mistral-7B-Instruct) desde un catálogo estandarizado.
-Filtra personas, lugares, instituciones y eventos históricos. Devuelve solo las 3 más representativas.
+Extracción de palabras clave con modelo LLM (Mistral) desde un catálogo estandarizado.
+Filtra códigos, números irrelevantes y selecciona solo entidades históricas útiles.
 """
 
 import pandas as pd
 from tqdm import tqdm
 import os
+import re
 from dotenv import load_dotenv
 from langchain_community.llms import HuggingFaceEndpoint
 
@@ -26,6 +27,19 @@ llm = HuggingFaceEndpoint(
     max_new_tokens=100
 )
 
+def is_valid_keyword(kw):
+    """Filtra códigos, números irrelevantes, y términos triviales."""
+    kw = kw.strip()
+    if len(kw) < 3:
+        return False
+    if kw.isdigit():
+        year = int(kw)
+        if year < 1400 or year > 2100:
+            return False
+    if re.match(r"[A-Z]?\d{2,}[-–]\w+", kw, re.IGNORECASE):
+        return False
+    return True
+
 def extract_keywords_with_llm(texto_fuente):
     if not isinstance(texto_fuente, str) or not texto_fuente.strip():
         return []
@@ -40,7 +54,7 @@ Palabras clave:"""
 
     try:
         response = llm.invoke(prompt).strip()
-        keywords = [kw.strip() for kw in response.split(",") if kw.strip()]
+        keywords = [kw.strip() for kw in response.split(",") if is_valid_keyword(kw.strip())]
         return keywords[:3]
     except Exception as e:
         print(f"⚠️ Error al usar LLM para texto: {e}")
@@ -57,7 +71,7 @@ def main():
     df["texto_fuente"] = df[["fecha_topica", "descripcion", "observaciones"]].fillna("").agg(" ".join, axis=1)
 
     print("🧠 Extrayendo keywords con LLM...")
-    tqdm.pandas(desc="⏳ Extrayendo con LLM")
+    tqdm.pandas(desc="⏳ Extrayendo con LLM y filtrando")
     df["keywords_extraidas"] = df["texto_fuente"].progress_apply(extract_keywords_with_llm)
 
     print(f"💾 Guardando resultados en: {OUTPUT_FILE}")
