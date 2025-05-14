@@ -1,0 +1,1434 @@
+@prefix ent: <http://ira.pucp.edu.pe/entidad/> .
+@prefix ira: <http://ira.pucp.edu.pe/catalogo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix voc: <http://ira.pucp.edu.pe/vocab/> .
+
+ira:doc_001 a voc:Documento ;
+    voc:signatura "FDL-1436" ;
+    voc:tienePalabraClave ent:general_santa_cruz,
+        ent:lima,
+        ent:santiago .
+
+ira:doc_002 a voc:Documento ;
+    voc:signatura "FRAC-2291" ;
+    voc:tienePalabraClave ent:lima,
+        ent:luis_carrillo,
+        ent:miguel_langton .
+
+ira:doc_003 a voc:Documento ;
+    voc:signatura "FDL-0235" ;
+    voc:tienePalabraClave ent:cuzco,
+        ent:junta_departamental_preparatoria,
+        ent:prefectura .
+
+ira:doc_004 a voc:Documento ;
+    voc:signatura "FRAC-0528" ;
+    voc:tienePalabraClave ent:lima,
+        ent:pablo_ramírez_de_arellano,
+        ent:tiburcio_de_mendoza_y_ríos .
+
+ira:doc_005 a voc:Documento ;
+    voc:signatura "FRAC-1613" ;
+    voc:tienePalabraClave ent:domingo_ramírez_de_arellano,
+        ent:lima,
+        ent:señora_santa_ana .
+
+ira:doc_006 a voc:Documento ;
+    voc:signatura "FDL-2645" ;
+    voc:tienePalabraClave ent:carmen_garcía,
+        ent:manuel_y_rivero .
+
+ira:doc_007 a voc:Documento ;
+    voc:signatura "FRAC-2938" ;
+    voc:tienePalabraClave ent:antonio_de_aparicio,
+        ent:lima,
+        ent:manuel_lorenzo_de_león_y_encalada .
+
+ira:doc_008 a voc:Documento ;
+    voc:signatura "FDL-0510" ;
+    voc:tienePalabraClave ent:lima,
+        ent:manuel_mendiburu,
+        ent:moquegua .
+
+ira:doc_009 a voc:Documento ;
+    voc:signatura "FRAC-2502" ;
+    voc:tienePalabraClave ent:antonio_sancho_dávila,
+        ent:lima,
+        ent:manuel_de_herce .
+
+ira:doc_010 a voc:Documento ;
+    voc:signatura "FRAC-1662" ;
+    voc:tienePalabraClave ent:felipe_sancho_dávila,
+        ent:juan_de_dios_barrionuevo,
+        ent:pedro_otárola .
+
+ira:doc_011 a voc:Documento ;
+    voc:signatura "FDL-2068" ;
+    voc:tienePalabraClave ent:mar_de_bolivia,
+        ent:miguel_moran,
+        ent:pacífico .
+
+ira:doc_012 a voc:Documento ;
+    voc:signatura "FDL-3231" ;
+    voc:tienePalabraClave ent:juan_montoya,
+        ent:lima_josé_rufino_echenique,
+        ent:pablo_vargas_caycedo .
+
+ira:doc_013 a voc:Documento ;
+    voc:signatura "FRAC-1051" ;
+    voc:tienePalabraClave ent:1804,
+        ent:polilla,
+        ent:real_cédula .
+
+ira:doc_014 a voc:Documento ;
+    voc:signatura "FDL-3437" ;
+    voc:tienePalabraClave ent:josé_rivero,
+        ent:juna_humberto_valdivia,
+        ent:pocsi .
+
+ira:doc_015 a voc:Documento ;
+    voc:signatura "FRAC-0817" ;
+    voc:tienePalabraClave ent:josef_zamorano,
+        ent:los_reyes .
+
+ira:doc_016 a voc:Documento ;
+    voc:signatura "FRAC-1990" ;
+    voc:tienePalabraClave ent:callao,
+        ent:josé_de_andrade,
+        ent:juan_baptista_mansisidor .
+
+ira:doc_017 a voc:Documento ;
+    voc:signatura "FDL-2695" ;
+    voc:tienePalabraClave ent:arequipa,
+        ent:custodia,
+        ent:menores .
+
+ira:doc_018 a voc:Documento ;
+    voc:signatura "FDL-3388" ;
+    voc:tienePalabraClave ent:juan_mesa,
+        ent:moyobamba,
+        ent:san_martín .
+
+ira:doc_019 a voc:Documento ;
+    voc:signatura "FDL-0304" ;
+    voc:tienePalabraClave <http://ira.pucp.edu.pe/entidad/a64
+
+texto:_s/l_carta_remitida_por_juan_de_la_cueva_texto_manuscrito>,
+        ent:julio_de_azmero,
+        <http://ira.pucp.edu.pe/entidad/zonas_perdidas_10_%_antigua_signatura_a63
+palabras_clave:_juan_de_la_cueva> .
+
+ira:doc_020 a voc:Documento ;
+    voc:signatura "FDL-0830" ;
+    voc:tienePalabraClave ent:arica,
+        ent:domingo_nieto,
+        ent:tacna .
+
+ira:doc_021 a voc:Documento ;
+    voc:signatura "FRAC-1526" ;
+    voc:tienePalabraClave ent:antonio_sancho_dávila,
+        ent:juan_pedro_sancho_dávila,
+        ent:lima .
+
+ira:doc_022 a voc:Documento ;
+    voc:signatura "FRAC-1095" ;
+    voc:tienePalabraClave ent:catedral,
+        ent:francisco_xavier_de_echagüe,
+        ent:reyes .
+
+ira:doc_023 a voc:Documento ;
+    voc:signatura "FRAC-1721" ;
+    voc:tienePalabraClave ent:lima,
+        ent:maría_antonia_santibáñez,
+        ent:rosa_santibáñez .
+
+ira:doc_024 a voc:Documento ;
+    voc:signatura "FDL-1508" ;
+    voc:tienePalabraClave ent:borrador,
+        ent:f55 .
+
+ira:doc_025 a voc:Documento ;
+    voc:signatura "FDL-0317" ;
+    voc:tienePalabraClave ent:fortunata_n_de_sancho_dávila,
+        ent:lima,
+        ent:ventura_marcó_del_pont .
+
+ira:doc_026 a voc:Documento ;
+    voc:signatura "FRAC-2370" ;
+    voc:tienePalabraClave ent:garavato,
+        ent:lima,
+        ent:polilla .
+
+ira:doc_027 a voc:Documento ;
+    voc:signatura "FRAC-0884" ;
+    voc:tienePalabraClave ent:cristóval_de_león_y_carvajal,
+        ent:petronila_de_sagardia,
+        ent:reyes_traslado .
+
+ira:doc_028 a voc:Documento ;
+    voc:signatura "FDL-2369" ;
+    voc:tienePalabraClave ent:josé_balluvian,
+        ent:pajayal,
+        ent:tumbes .
+
+ira:doc_029 a voc:Documento ;
+    voc:signatura "FRAC-0541" ;
+    voc:tienePalabraClave ent:juan_luis_lópez,
+        ent:pablo_de_garcía,
+        ent:pedro_reyes .
+
+ira:doc_030 a voc:Documento ;
+    voc:signatura "FDL-0453" ;
+    voc:tienePalabraClave ent:aduana_fluvial_de_iquitos,
+        ent:iquitos,
+        ent:marcos_cavero .
+
+ira:doc_031 a voc:Documento ;
+    voc:signatura "FDL-1780" ;
+    voc:tienePalabraClave ent:el_eco,
+        ent:iquitos,
+        ent:manuel_prado .
+
+ira:doc_032 a voc:Documento ;
+    voc:signatura "FRAC-1158" ;
+    voc:tienePalabraClave ent:los_reyes,
+        ent:marquesa_de_conchán,
+        ent:tiburcio_de_mendoza_y_ríos .
+
+ira:doc_033 a voc:Documento ;
+    voc:signatura "FDL-3382" ;
+    voc:tienePalabraClave ent:cariamanga,
+        ent:loja,
+        ent:pedro_josé_alvarez .
+
+ira:doc_034 a voc:Documento ;
+    voc:signatura "FRAC-1758" ;
+    voc:tienePalabraClave ent:juan_de_uria,
+        ent:juan_miguel_de_mendiburu,
+        ent:luis_carrillo .
+
+ira:doc_035 a voc:Documento ;
+    voc:signatura "FDL-1201" ;
+    voc:tienePalabraClave ent:callao,
+        ent:comandante_general_de_marina,
+        ent:contralmirante .
+
+ira:doc_036 a voc:Documento ;
+    voc:signatura "FDL-3707" ;
+    voc:tienePalabraClave ent:arequipa,
+        ent:juan_francisco_de_yzuel,
+        ent:mariano_garcía .
+
+ira:doc_037 a voc:Documento ;
+    voc:signatura "FDL-3208" ;
+    voc:tienePalabraClave ent:alejandro_deustua,
+        ent:ecuador,
+        ent:guerra_civil .
+
+ira:doc_038 a voc:Documento ;
+    voc:signatura "FRAC-0291" ;
+    voc:tienePalabraClave ent:josé_de_la_riva-agüero,
+        ent:lima,
+        ent:los_reyes .
+
+ira:doc_039 a voc:Documento ;
+    voc:signatura "FDL-3642" ;
+    voc:tienePalabraClave ent:andoas,
+        ent:loreto,
+        ent:maynas .
+
+ira:doc_040 a voc:Documento ;
+    voc:signatura "FDL-1589" ;
+    voc:tienePalabraClave ent:arequipa,
+        ent:juan_ruiz_de_monjaraz .
+
+ira:doc_041 a voc:Documento ;
+    voc:signatura "FRAC-2430" ;
+    voc:tienePalabraClave ent:empleados,
+        ent:real_orden,
+        ent:san_lorenzo .
+
+ira:doc_042 a voc:Documento ;
+    voc:signatura "FDL-1236" ;
+    voc:tienePalabraClave ent:huanchaco,
+        ent:manuel_mendiburu,
+        ent:memorias .
+
+ira:doc_043 a voc:Documento ;
+    voc:signatura "FRAC-0896" ;
+    voc:tienePalabraClave ent:6-172,
+        ent:felipe_sancho_dávila,
+        ent:lomo_largo .
+
+ira:doc_044 a voc:Documento ;
+    voc:signatura "FDL-0075" ;
+    voc:tienePalabraClave ent:lima,
+        ent:manuel_menéndez,
+        ent:tesorería_general .
+
+ira:doc_045 a voc:Documento ;
+    voc:signatura "FDL-0812" ;
+    voc:tienePalabraClave ent:josé_mariano_alvizuri,
+        ent:nicolás_de_piérola,
+        ent:pacochas .
+
+ira:doc_046 a voc:Documento ;
+    voc:signatura "FRAC-1829" ;
+    voc:tienePalabraClave ent:benito_de_la_matta_linares,
+        ent:san_lorenzo,
+        ent:túpac_amaru .
+
+ira:doc_047 a voc:Documento ;
+    voc:signatura "FDL-2834" ;
+    voc:tienePalabraClave ent:lima,
+        ent:salitrera_watson,
+        ent:watson .
+
+ira:doc_048 a voc:Documento ;
+    voc:signatura "FDL-3998" ;
+    voc:tienePalabraClave ent:arequipa,
+        ent:mariano_garcía_y_rivero,
+        ent:maría_rosa_de_ureta_y_rivero .
+
+ira:doc_049 a voc:Documento ;
+    voc:signatura "FDL-2217" ;
+    voc:tienePalabraClave ent:caja_48,
+        ent:inventario,
+        ent:res .
+
+ira:doc_050 a voc:Documento ;
+    voc:signatura "FDL-0809" ;
+    voc:tienePalabraClave ent:josé_joaquín_de_olmedo,
+        ent:lima,
+        ent:ministerio_de_relaciones_exteriores .
+
+ira:doc_051 a voc:Documento ;
+    voc:signatura "FDL-2048" ;
+    voc:tienePalabraClave ent:huanchaco,
+        ent:huanta,
+        ent:pativilca .
+
+ira:doc_052 a voc:Documento ;
+    voc:signatura "FDL-0247" ;
+    voc:tienePalabraClave ent:cuzco,
+        ent:manuel_venero,
+        ent:urubamba .
+
+ira:doc_053 a voc:Documento ;
+    voc:signatura "FDL-2396" ;
+    voc:tienePalabraClave ent:amazonas,
+        ent:lima,
+        ent:porras_barrenechea .
+
+ira:doc_054 a voc:Documento ;
+    voc:signatura "FDL-2571" ;
+    voc:tienePalabraClave ent:historiador,
+        ent:lima,
+        ent:ruben_vargas_ugarte .
+
+ira:doc_055 a voc:Documento ;
+    voc:signatura "FDL-1506" ;
+    voc:tienePalabraClave ent:borrador,
+        ent:decretos,
+        ent:ilo .
+
+ira:doc_056 a voc:Documento ;
+    voc:signatura "FRAC-0082" ;
+    voc:tienePalabraClave ent:aguilar,
+        ent:figueroa,
+        ent:lima .
+
+ira:doc_057 a voc:Documento ;
+    voc:signatura "FRAC-1892" ;
+    voc:tienePalabraClave ent:bellavista,
+        ent:domingo_ramírez_de_arellano,
+        ent:zervilión .
+
+ira:doc_058 a voc:Documento ;
+    voc:signatura "FDL-1063" ;
+    voc:tienePalabraClave <http://ira.pucp.edu.pe/entidad/d52
+
+texto:_el_25_de_mayo_de_1783>,
+        ent:lima,
+        ent:santo_oficio .
+
+ira:doc_059 a voc:Documento ;
+    voc:signatura "FDL-3743" ;
+    voc:tienePalabraClave ent:arequipa,
+        ent:j_torrico,
+        ent:paucarpata .
+
+ira:doc_060 a voc:Documento ;
+    voc:signatura "FRAC-2684" ;
+    voc:tienePalabraClave ent:bruno_antonio_polanco,
+        ent:cádiz,
+        ent:lima .
+
+ira:doc_061 a voc:Documento ;
+    voc:signatura "FRAC-0847" ;
+    voc:tienePalabraClave ent:izcuchaca,
+        ent:pampamarca,
+        ent:san_juan_de_lucanas .
+
+ira:doc_062 a voc:Documento ;
+    voc:signatura "FDL-2428" ;
+    voc:tienePalabraClave ent:1925,
+        ent:comisión_principal_de_presupuesto,
+        ent:lima .
+
+ira:doc_063 a voc:Documento ;
+    voc:signatura "FRAC-0824" ;
+    voc:tienePalabraClave ent:josé_sanz_pérez,
+        ent:lima,
+        ent:resolución .
+
+ira:doc_064 a voc:Documento ;
+    voc:signatura "FDL-0173" ;
+    voc:tienePalabraClave ent:leonidas_nieto,
+        ent:manuel_pardo,
+        ent:pedro_gálvez .
+
+ira:doc_065 a voc:Documento ;
+    voc:signatura "FDL-2880" ;
+    voc:tienePalabraClave ent:compañía_salitrera_del_perú,
+        ent:julio_de_1878,
+        ent:lima .
+
+ira:doc_066 a voc:Documento ;
+    voc:signatura "FDL-1319" ;
+    voc:tienePalabraClave ent:lima,
+        ent:manuel_antonio_de_noriega,
+        ent:universidad_de_lima .
+
+ira:doc_067 a voc:Documento ;
+    voc:signatura "FDL-1291" ;
+    voc:tienePalabraClave ent:cerro_de_pasco,
+        ent:josé_rufino_echenique,
+        ent:lima .
+
+ira:doc_068 a voc:Documento ;
+    voc:signatura "FDL-0259" ;
+    voc:tienePalabraClave ent:cuzco,
+        ent:esteban_de_navia,
+        ent:tomás_loayza .
+
+ira:doc_069 a voc:Documento ;
+    voc:signatura "FDL-2939" ;
+    voc:tienePalabraClave ent:arequipa,
+        ent:manuel_lopéz,
+        ent:vitor .
+
+ira:doc_070 a voc:Documento ;
+    voc:signatura "FDL-0661" ;
+    voc:tienePalabraClave ent:domingo_nieto,
+        ent:trinidad_morán,
+        ent:trujillo .
+
+ira:doc_071 a voc:Documento ;
+    voc:signatura "FRAC-2769" ;
+    voc:tienePalabraClave ent:francisco_luque,
+        ent:joseph_de_veramendi,
+        ent:reyes .
+
+ira:doc_072 a voc:Documento ;
+    voc:signatura "FDL-3560" ;
+    voc:tienePalabraClave ent:antonio_g_de_la_fuente,
+        ent:arequipa,
+        ent:quilca .
+
+ira:doc_073 a voc:Documento ;
+    voc:signatura "FRAC-2137" ;
+    voc:tienePalabraClave ent:el_gallardo,
+        ent:joseph_moscoso,
+        ent:lima .
+
+ira:doc_074 a voc:Documento ;
+    voc:signatura "FDL-2128" ;
+    voc:tienePalabraClave ent:caja_46,
+        ent:ejército_peruano,
+        ent:piura .
+
+ira:doc_075 a voc:Documento ;
+    voc:signatura "FDL-2632" ;
+    voc:tienePalabraClave ent:expreso,
+        ent:hector_lópez_martínez,
+        ent:instituto_de_estudios_histórico_-_marítimos_del_perú .
+
+ira:doc_076 a voc:Documento ;
+    voc:signatura "FDL-0097" ;
+    voc:tienePalabraClave ent:chancay,
+        ent:juan_blanco,
+        ent:manuel_menéndez .
+
+ira:doc_077 a voc:Documento ;
+    voc:signatura "FDL-0425" ;
+    voc:tienePalabraClave ent:archivo_naval_del_perú,
+        ent:b15,
+        ent:legajo_1825 .
+
+ira:doc_078 a voc:Documento ;
+    voc:signatura "FDL-0915" ;
+    voc:tienePalabraClave ent:domingo_nieto,
+        ent:gamarra,
+        ent:lima .
+
+ira:doc_079 a voc:Documento ;
+    voc:signatura "FDL-3443" ;
+    voc:tienePalabraClave ent:arequipa,
+        ent:manuel_alvares,
+        ent:tesorero .
+
+ira:doc_080 a voc:Documento ;
+    voc:signatura "FRAC-2160" ;
+    voc:tienePalabraClave ent:joseph_isasi,
+        ent:lima,
+        ent:ramón_borica .
+
+ira:doc_081 a voc:Documento ;
+    voc:signatura "FRAC-1962" ;
+    voc:tienePalabraClave ent:joseph_antonio_de_alva,
+        ent:rosa_morales .
+
+ira:doc_082 a voc:Documento ;
+    voc:signatura "FDL-1424" ;
+    voc:tienePalabraClave ent:borrador,
+        ent:ministro_de_hacienda,
+        ent:oficio .
+
+ira:doc_083 a voc:Documento ;
+    voc:signatura "FDL-1713" ;
+    voc:tienePalabraClave ent:baldibia,
+        ent:mendez,
+        ent:parís .
+
+ira:doc_084 a voc:Documento ;
+    voc:signatura "FDL-0458" ;
+    voc:tienePalabraClave ent:ente_posible,
+        ent:francisco_fariña,
+        ent:lima .
+
+ira:doc_085 a voc:Documento ;
+    voc:signatura "FRAC-0402" ;
+    voc:tienePalabraClave ent:juan_de_berindoaga,
+        ent:lima,
+        ent:regimiento_de_dragones .
+
+ira:doc_086 a voc:Documento ;
+    voc:signatura "FDL-3218" ;
+    voc:tienePalabraClave ent:ejército,
+        ent:josé_maría_raygada,
+        ent:lima .
+
+ira:doc_087 a voc:Documento ;
+    voc:signatura "FDL-2874" ;
+    voc:tienePalabraClave ent:gavino_de_menchaca,
+        ent:guillermo_salcedo,
+        ent:leónidas_cárdenas .
+
+ira:doc_088 a voc:Documento ;
+    voc:signatura "FRAC-2997" ;
+    voc:tienePalabraClave ent:callao,
+        ent:mercedes,
+        ent:miguel_martínez .
+
+ira:doc_089 a voc:Documento ;
+    voc:signatura "FDL-0007" ;
+    voc:tienePalabraClave ent:huánuco,
+        ent:josé_de_la_riva-agüero,
+        ent:manuel_gutiérrez_paya .
+
+ira:doc_090 a voc:Documento ;
+    voc:signatura "FDL-1149" ;
+    voc:tienePalabraClave ent:lima,
+        ent:perú,
+        ent:quito .
+
+ira:doc_091 a voc:Documento ;
+    voc:signatura "FDL-3171" ;
+    voc:tienePalabraClave ent:agustín_cons,
+        ent:josé_rivero,
+        ent:la_paz .
+
+ira:doc_092 a voc:Documento ;
+    voc:signatura "FDL-1645" ;
+    voc:tienePalabraClave ent:cañete,
+        ent:lunaguanay,
+        ent:marcelino_huamán .
+
+ira:doc_093 a voc:Documento ;
+    voc:signatura "FRAC-1495" ;
+    voc:tienePalabraClave ent:felipe_sancho_dávila,
+        ent:juan_sancho_dávila,
+        ent:nicolás_de_salazar .
+
+ira:doc_094 a voc:Documento ;
+    voc:signatura "FRAC-1268" ;
+    voc:tienePalabraClave ent:bellavista,
+        ent:domingo_ramírez_de_arellano,
+        ent:lima .
+
+ira:doc_095 a voc:Documento ;
+    voc:signatura "FRAC-0674" ;
+    voc:tienePalabraClave ent:domingo_toledo,
+        ent:purísima_concepción,
+        ent:toribio_ramírez_de_arellano .
+
+ira:doc_096 a voc:Documento ;
+    voc:signatura "FDL-2365" ;
+    voc:tienePalabraClave ent:arequipa,
+        ent:manuel_ignacio_vivanco,
+        ent:tacna .
+
+ira:doc_097 a voc:Documento ;
+    voc:signatura "FDL-0128" ;
+    voc:tienePalabraClave ent:alcalde,
+        ent:lima,
+        ent:segunda_nominación .
+
+ira:doc_098 a voc:Documento ;
+    voc:signatura "FDL-2819" ;
+    voc:tienePalabraClave ent:josé_rivero,
+        ent:julián_moscoso,
+        ent:lima .
+
+ira:doc_099 a voc:Documento ;
+    voc:signatura "FDL-1073" ;
+    voc:tienePalabraClave ent:chile,
+        ent:guayaquil,
+        ent:ventura_lavalle .
+
+ira:doc_100 a voc:Documento ;
+    voc:signatura "FRAC-2844" ;
+    voc:tienePalabraClave ent:convento,
+        ent:román_de_aulestia,
+        ent:santa_catalina_de_sena .
+
+ent:1804 a voc:Evento ;
+    skos:prefLabel "1804"@es .
+
+ent:1925 a voc:Evento ;
+    skos:prefLabel "1925"@es .
+
+ent:6-172 a voc:Evento ;
+    skos:prefLabel "6-172"@es .
+
+<http://ira.pucp.edu.pe/entidad/a64
+
+texto:_s/l_carta_remitida_por_juan_de_la_cueva_texto_manuscrito> a voc:Otro ;
+    skos:prefLabel """A64
+
+Texto: S/L Carta Remitida Por Juan De La Cueva Texto Manuscrito"""@es .
+
+ent:aduana_fluvial_de_iquitos a voc:Institución ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/aduana_fluvial_de_iquitos> ;
+    skos:prefLabel "Aduana Fluvial De Iquitos"@es .
+
+ent:aguilar a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/aguilar> ;
+    skos:prefLabel "Aguilar"@es .
+
+ent:agustín_cons a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/agust_n_cons> ;
+    skos:prefLabel "Agustín Cons"@es .
+
+ent:alcalde a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/alcalde> ;
+    skos:prefLabel "Alcalde"@es .
+
+ent:alejandro_deustua a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/alejandro_deustua> ;
+    skos:prefLabel "Alejandro Deustua"@es .
+
+ent:amazonas a voc:Lugar ;
+    skos:prefLabel "Amazonas"@es .
+
+ent:andoas a voc:Lugar ;
+    skos:prefLabel "Andoas"@es .
+
+ent:antonio_de_aparicio a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/antonio_de_aparicio> ;
+    skos:prefLabel "Antonio De Aparicio"@es .
+
+ent:antonio_g_de_la_fuente a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/antonio_g_de_la_fuente> ;
+    skos:prefLabel "Antonio G. De La Fuente"@es .
+
+ent:archivo_naval_del_perú a voc:Institución ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/archivo_naval_del_per> ;
+    skos:prefLabel "Archivo Naval Del Perú"@es .
+
+ent:arica a voc:Lugar ;
+    owl:sameAs <http://vocabularies.unesco.org/thesaurus/mt7.05> ;
+    skos:prefLabel "Arica"@es .
+
+ent:b15 a voc:Otro ;
+    skos:prefLabel "B15"@es .
+
+ent:baldibia a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/baldibia> ;
+    skos:prefLabel "Baldibia"@es .
+
+ent:benito_de_la_matta_linares a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/benito_de_la_matta_linares> ;
+    skos:prefLabel "Benito De La Matta Linares"@es .
+
+ent:bruno_antonio_polanco a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/bruno_antonio_polanco> ;
+    skos:prefLabel "Bruno Antonio Polanco"@es .
+
+ent:caja_46 a voc:Otro ;
+    skos:prefLabel "Caja 46"@es .
+
+ent:caja_48 a voc:Otro ;
+    skos:prefLabel "Caja 48"@es .
+
+ent:cariamanga a voc:Lugar ;
+    skos:prefLabel "Cariamanga"@es .
+
+ent:carmen_garcía a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/carmen_garc_a> ;
+    skos:prefLabel "Carmen García"@es .
+
+ent:catedral a voc:Lugar ;
+    owl:sameAs <http://vocabularies.unesco.org/thesaurus/concept292> ;
+    skos:prefLabel "Catedral"@es .
+
+ent:cañete a voc:Lugar ;
+    skos:prefLabel "Cañete"@es .
+
+ent:cerro_de_pasco a voc:Lugar ;
+    skos:prefLabel "Cerro De Pasco"@es .
+
+ent:chancay a voc:Lugar ;
+    skos:prefLabel "Chancay"@es .
+
+ent:chile a voc:Lugar ;
+    owl:sameAs <http://vocabularies.unesco.org/thesaurus/concept770> ;
+    skos:prefLabel "Chile"@es .
+
+ent:comandante_general_de_marina a voc:Institución ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/comandante_general_de_marina> ;
+    skos:prefLabel "Comandante General De Marina"@es .
+
+ent:comisión_principal_de_presupuesto a voc:Institución ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/comisi_n_principal_de_presupuesto> ;
+    skos:prefLabel "Comisión Principal De Presupuesto"@es .
+
+ent:compañía_salitrera_del_perú a voc:Institución ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/compa_a_salitrera_del_per> ;
+    skos:prefLabel "Compañía Salitrera Del Perú"@es .
+
+ent:contralmirante a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/contralmirante> ;
+    skos:prefLabel "Contralmirante"@es .
+
+ent:convento a voc:Lugar ;
+    owl:sameAs <http://vocabularies.unesco.org/thesaurus/concept292> ;
+    skos:prefLabel "Convento"@es .
+
+ent:cristóval_de_león_y_carvajal a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/crist_val_de_le_n_y_carvajal> ;
+    skos:prefLabel "Cristóval De León Y Carvajal"@es .
+
+ent:custodia a voc:Otro ;
+    skos:prefLabel "Custodia"@es .
+
+ent:cádiz a voc:Lugar ;
+    skos:prefLabel "Cádiz"@es .
+
+<http://ira.pucp.edu.pe/entidad/d52
+
+texto:_el_25_de_mayo_de_1783> a voc:Evento ;
+    skos:prefLabel """D52
+
+Texto: El 25 De Mayo De 1783"""@es .
+
+ent:decretos a voc:Evento ;
+    skos:prefLabel "Decretos"@es .
+
+ent:domingo_toledo a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/domingo_toledo> ;
+    skos:prefLabel "Domingo Toledo"@es .
+
+ent:ecuador a voc:Lugar ;
+    owl:sameAs <http://vocabularies.unesco.org/thesaurus/concept776> ;
+    skos:prefLabel "Ecuador"@es .
+
+ent:ejército a voc:Institución ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/ej_rcito> ;
+    skos:prefLabel "Ejército"@es .
+
+ent:ejército_peruano a voc:Institución ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/ej_rcito_peruano> ;
+    skos:prefLabel "Ejército Peruano"@es .
+
+ent:el_eco a voc:Otro ;
+    skos:prefLabel "El Eco"@es .
+
+ent:el_gallardo a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/el_gallardo> ;
+    skos:prefLabel "El Gallardo"@es .
+
+ent:empleados a voc:Institución ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/empleados> ;
+    skos:prefLabel "Empleados"@es .
+
+ent:ente_posible a voc:Otro ;
+    skos:prefLabel "Ente Posible"@es .
+
+ent:esteban_de_navia a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/esteban_de_navia> ;
+    skos:prefLabel "Esteban De Navia"@es .
+
+ent:expreso a voc:Otro ;
+    skos:prefLabel "Expreso"@es .
+
+ent:f55 a voc:Otro ;
+    skos:prefLabel "F55"@es .
+
+ent:figueroa a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/figueroa> ;
+    skos:prefLabel "Figueroa"@es .
+
+ent:fortunata_n_de_sancho_dávila a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/fortunata_n_de_sancho_d_vila> ;
+    skos:prefLabel "Fortunata N. De Sancho Dávila"@es .
+
+ent:francisco_fariña a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/francisco_fari_a> ;
+    skos:prefLabel "Francisco Fariña"@es .
+
+ent:francisco_luque a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/francisco_luque> ;
+    skos:prefLabel "Francisco Luque"@es .
+
+ent:francisco_xavier_de_echagüe a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/francisco_xavier_de_echag_e> ;
+    skos:prefLabel "Francisco Xavier De Echagüe"@es .
+
+ent:gamarra a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/gamarra> ;
+    skos:prefLabel "Gamarra"@es .
+
+ent:garavato a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/garavato> ;
+    skos:prefLabel "Garavato"@es .
+
+ent:gavino_de_menchaca a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/gavino_de_menchaca> ;
+    skos:prefLabel "Gavino De Menchaca"@es .
+
+ent:general_santa_cruz a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/general_santa_cruz> ;
+    skos:prefLabel "General Santa Cruz"@es .
+
+ent:guayaquil a voc:Lugar ;
+    skos:prefLabel "Guayaquil"@es .
+
+ent:guerra_civil a voc:Evento ;
+    owl:sameAs <http://vocabularies.unesco.org/thesaurus/concept5342> ;
+    skos:prefLabel "Guerra Civil"@es .
+
+ent:guillermo_salcedo a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/guillermo_salcedo> ;
+    skos:prefLabel "Guillermo Salcedo"@es .
+
+ent:hector_lópez_martínez a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/hector_l_pez_mart_nez> ;
+    skos:prefLabel "Hector López Martínez"@es .
+
+ent:historiador a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/historiador> ;
+    skos:prefLabel "Historiador"@es .
+
+ent:huanta a voc:Lugar ;
+    skos:prefLabel "Huanta"@es .
+
+ent:huánuco a voc:Lugar ;
+    skos:prefLabel "Huánuco"@es .
+
+ent:ilo a voc:Lugar ;
+    skos:prefLabel "Ilo"@es .
+
+ent:instituto_de_estudios_histórico_-_marítimos_del_perú a voc:Institución ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/instituto_de_estudios_hist_rico_mar_timos_del_per> ;
+    skos:prefLabel "Instituto De Estudios Histórico - Marítimos Del Perú"@es .
+
+ent:inventario a voc:Otro ;
+    skos:prefLabel "Inventario"@es .
+
+ent:izcuchaca a voc:Lugar ;
+    skos:prefLabel "Izcuchaca"@es .
+
+ent:j_torrico a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/j_torrico> ;
+    skos:prefLabel "J. Torrico"@es .
+
+ent:josef_zamorano a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/josef_zamorano> ;
+    skos:prefLabel "Josef Zamorano"@es .
+
+ent:joseph_antonio_de_alva a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/joseph_antonio_de_alva> ;
+    skos:prefLabel "Joseph Antonio De Alva"@es .
+
+ent:joseph_de_veramendi a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/joseph_de_veramendi> ;
+    skos:prefLabel "Joseph De Veramendi"@es .
+
+ent:joseph_isasi a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/joseph_isasi> ;
+    skos:prefLabel "Joseph Isasi"@es .
+
+ent:joseph_moscoso a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/joseph_moscoso> ;
+    skos:prefLabel "Joseph Moscoso"@es .
+
+ent:josé_balluvian a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/jos_balluvian> ;
+    skos:prefLabel "José Balluvian"@es .
+
+ent:josé_de_andrade a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/jos_de_andrade> ;
+    skos:prefLabel "José De Andrade"@es .
+
+ent:josé_joaquín_de_olmedo a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/jos_joaqu_n_de_olmedo> ;
+    skos:prefLabel "José Joaquín De Olmedo"@es .
+
+ent:josé_mariano_alvizuri a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/jos_mariano_alvizuri> ;
+    skos:prefLabel "José Mariano Alvizuri"@es .
+
+ent:josé_maría_raygada a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/jos_mar_a_raygada> ;
+    skos:prefLabel "José María Raygada"@es .
+
+ent:josé_rufino_echenique a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/jos_rufino_echenique> ;
+    skos:prefLabel "José Rufino Echenique"@es .
+
+ent:josé_sanz_pérez a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/jos_sanz_p_rez> ;
+    skos:prefLabel "José Sanz Pérez"@es .
+
+ent:juan_baptista_mansisidor a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/juan_baptista_mansisidor> ;
+    skos:prefLabel "Juan Baptista Mansisidor"@es .
+
+ent:juan_blanco a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/juan_blanco> ;
+    skos:prefLabel "Juan Blanco"@es .
+
+ent:juan_de_berindoaga a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/juan_de_berindoaga> ;
+    skos:prefLabel "Juan De Berindoaga"@es .
+
+ent:juan_de_dios_barrionuevo a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/juan_de_dios_barrionuevo> ;
+    skos:prefLabel "Juan De Dios Barrionuevo"@es .
+
+ent:juan_de_uria a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/juan_de_uria> ;
+    skos:prefLabel "Juan De Uria"@es .
+
+ent:juan_francisco_de_yzuel a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/juan_francisco_de_yzuel> ;
+    skos:prefLabel "Juan Francisco De Yzuel"@es .
+
+ent:juan_luis_lópez a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/juan_luis_l_pez> ;
+    skos:prefLabel "Juan Luis López"@es .
+
+ent:juan_mesa a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/juan_mesa> ;
+    skos:prefLabel "Juan Mesa"@es .
+
+ent:juan_miguel_de_mendiburu a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/juan_miguel_de_mendiburu> ;
+    skos:prefLabel "Juan Miguel De Mendiburu"@es .
+
+ent:juan_montoya a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/juan_montoya> ;
+    skos:prefLabel "Juan Montoya"@es .
+
+ent:juan_pedro_sancho_dávila a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/juan_pedro_sancho_d_vila> ;
+    skos:prefLabel "Juan Pedro Sancho Dávila"@es .
+
+ent:juan_ruiz_de_monjaraz a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/juan_ruiz_de_monjaraz> ;
+    skos:prefLabel "Juan Ruiz De Monjaraz"@es .
+
+ent:juan_sancho_dávila a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/juan_sancho_d_vila> ;
+    skos:prefLabel "Juan Sancho Dávila"@es .
+
+ent:julio_de_1878 a voc:Evento ;
+    skos:prefLabel "Julio De 1878"@es .
+
+ent:julio_de_azmero a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/julio_de_azmero> ;
+    skos:prefLabel "Julio De Azmero"@es .
+
+ent:julián_moscoso a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/juli_n_moscoso> ;
+    skos:prefLabel "Julián Moscoso"@es .
+
+ent:juna_humberto_valdivia a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/juna_humberto_valdivia> ;
+    skos:prefLabel "Juna Humberto Valdivia"@es .
+
+ent:junta_departamental_preparatoria a voc:Institución ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/junta_departamental_preparatoria> ;
+    skos:prefLabel "Junta Departamental Preparatoria"@es .
+
+ent:la_paz a voc:Lugar ;
+    skos:prefLabel "La Paz"@es .
+
+ent:legajo_1825 a voc:Otro ;
+    skos:prefLabel "Legajo 1825"@es .
+
+ent:leonidas_nieto a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/leonidas_nieto> ;
+    skos:prefLabel "Leonidas Nieto"@es .
+
+ent:leónidas_cárdenas a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/le_nidas_c_rdenas> ;
+    skos:prefLabel "Leónidas Cárdenas"@es .
+
+ent:lima_josé_rufino_echenique a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/lima_jos_rufino_echenique> ;
+    skos:prefLabel "Lima José Rufino Echenique"@es .
+
+ent:loja a voc:Lugar ;
+    skos:prefLabel "Loja"@es .
+
+ent:lomo_largo a voc:Lugar ;
+    skos:prefLabel "Lomo Largo"@es .
+
+ent:loreto a voc:Lugar ;
+    skos:prefLabel "Loreto"@es .
+
+ent:lunaguanay a voc:Lugar ;
+    skos:prefLabel "Lunaguanay"@es .
+
+ent:manuel_alvares a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/manuel_alvares> ;
+    skos:prefLabel "Manuel Alvares"@es .
+
+ent:manuel_antonio_de_noriega a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/manuel_antonio_de_noriega> ;
+    skos:prefLabel "Manuel Antonio De Noriega"@es .
+
+ent:manuel_de_herce a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/manuel_de_herce> ;
+    skos:prefLabel "Manuel De Herce"@es .
+
+ent:manuel_gutiérrez_paya a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/manuel_guti_rrez_paya> ;
+    skos:prefLabel "Manuel Gutiérrez Paya"@es .
+
+ent:manuel_ignacio_vivanco a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/manuel_ignacio_vivanco> ;
+    skos:prefLabel "Manuel Ignacio Vivanco"@es .
+
+ent:manuel_lopéz a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/manuel_lop_z> ;
+    skos:prefLabel "Manuel Lopéz"@es .
+
+ent:manuel_lorenzo_de_león_y_encalada a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/manuel_lorenzo_de_le_n_y_encalada> ;
+    skos:prefLabel "Manuel Lorenzo De León Y Encalada"@es .
+
+ent:manuel_pardo a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/manuel_pardo> ;
+    skos:prefLabel "Manuel Pardo"@es .
+
+ent:manuel_prado a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/manuel_prado> ;
+    skos:prefLabel "Manuel Prado"@es .
+
+ent:manuel_venero a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/manuel_venero> ;
+    skos:prefLabel "Manuel Venero"@es .
+
+ent:manuel_y_rivero a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/manuel_y_rivero> ;
+    skos:prefLabel "Manuel Y. Rivero"@es .
+
+ent:mar_de_bolivia a voc:Otro ;
+    skos:prefLabel "Mar De Bolivia"@es .
+
+ent:marcelino_huamán a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/marcelino_huam_n> ;
+    skos:prefLabel "Marcelino Huamán"@es .
+
+ent:marcos_cavero a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/marcos_cavero> ;
+    skos:prefLabel "Marcos Cavero"@es .
+
+ent:mariano_garcía a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/mariano_garc_a> ;
+    skos:prefLabel "Mariano García"@es .
+
+ent:mariano_garcía_y_rivero a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/mariano_garc_a_y_rivero> ;
+    skos:prefLabel "Mariano García Y Rivero"@es .
+
+ent:marquesa_de_conchán a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/marquesa_de_conch_n> ;
+    skos:prefLabel "Marquesa De Conchán"@es .
+
+ent:maría_antonia_santibáñez a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/mar_a_antonia_santib_ez> ;
+    skos:prefLabel "María Antonia Santibáñez"@es .
+
+ent:maría_rosa_de_ureta_y_rivero a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/mar_a_rosa_de_ureta_y_rivero> ;
+    skos:prefLabel "María Rosa De Ureta Y Rivero"@es .
+
+ent:maynas a voc:Lugar ;
+    owl:sameAs <http://vocabularies.unesco.org/thesaurus/concept2166> ;
+    skos:prefLabel "Maynas"@es .
+
+ent:memorias a voc:Otro ;
+    skos:prefLabel "Memorias"@es .
+
+ent:mendez a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/mendez> ;
+    skos:prefLabel "Mendez"@es .
+
+ent:menores a voc:Otro ;
+    skos:prefLabel "Menores"@es .
+
+ent:mercedes a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/mercedes> ;
+    skos:prefLabel "Mercedes"@es .
+
+ent:miguel_langton a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/miguel_langton> ;
+    skos:prefLabel "Miguel Langton"@es .
+
+ent:miguel_martínez a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/miguel_mart_nez> ;
+    skos:prefLabel "Miguel Martínez"@es .
+
+ent:miguel_moran a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/miguel_moran> ;
+    skos:prefLabel "Miguel Moran"@es .
+
+ent:ministerio_de_relaciones_exteriores a voc:Institución ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/ministerio_de_relaciones_exteriores> ;
+    skos:prefLabel "Ministerio De Relaciones Exteriores"@es .
+
+ent:ministro_de_hacienda a voc:Institución ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/ministro_de_hacienda> ;
+    skos:prefLabel "Ministro De Hacienda"@es .
+
+ent:moquegua a voc:Lugar ;
+    skos:prefLabel "Moquegua"@es .
+
+ent:moyobamba a voc:Lugar ;
+    skos:prefLabel "Moyobamba"@es .
+
+ent:nicolás_de_piérola a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/nicol_s_de_pi_rola> ;
+    skos:prefLabel "Nicolás De Piérola"@es .
+
+ent:nicolás_de_salazar a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/nicol_s_de_salazar> ;
+    skos:prefLabel "Nicolás De Salazar"@es .
+
+ent:oficio a voc:Otro ;
+    skos:prefLabel "Oficio"@es .
+
+ent:pablo_de_garcía a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/pablo_de_garc_a> ;
+    skos:prefLabel "Pablo De García"@es .
+
+ent:pablo_ramírez_de_arellano a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/pablo_ram_rez_de_arellano> ;
+    skos:prefLabel "Pablo Ramírez De Arellano"@es .
+
+ent:pablo_vargas_caycedo a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/pablo_vargas_caycedo> ;
+    skos:prefLabel "Pablo Vargas Caycedo"@es .
+
+ent:pacochas a voc:Otro ;
+    skos:prefLabel "Pacochas"@es .
+
+ent:pacífico a voc:Otro ;
+    skos:prefLabel "Pacífico"@es .
+
+ent:pajayal a voc:Otro ;
+    skos:prefLabel "Pajayal"@es .
+
+ent:pampamarca a voc:Lugar ;
+    skos:prefLabel "Pampamarca"@es .
+
+ent:parís a voc:Lugar ;
+    skos:prefLabel "París"@es .
+
+ent:pativilca a voc:Lugar ;
+    skos:prefLabel "Pativilca"@es .
+
+ent:paucarpata a voc:Lugar ;
+    skos:prefLabel "Paucarpata"@es .
+
+ent:pedro_gálvez a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/pedro_g_lvez> ;
+    skos:prefLabel "Pedro Gálvez"@es .
+
+ent:pedro_josé_alvarez a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/pedro_jos_alvarez> ;
+    skos:prefLabel "Pedro José Alvarez"@es .
+
+ent:pedro_otárola a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/pedro_ot_rola> ;
+    skos:prefLabel "Pedro Otárola"@es .
+
+ent:pedro_reyes a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/pedro_reyes> ;
+    skos:prefLabel "Pedro Reyes"@es .
+
+ent:perú a voc:Otro ;
+    skos:prefLabel "Perú"@es .
+
+ent:petronila_de_sagardia a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/petronila_de_sagardia> ;
+    skos:prefLabel "Petronila De Sagardia"@es .
+
+ent:piura a voc:Lugar ;
+    skos:prefLabel "Piura"@es .
+
+ent:pocsi a voc:Otro ;
+    skos:prefLabel "Pocsi"@es .
+
+ent:porras_barrenechea a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/porras_barrenechea> ;
+    skos:prefLabel "Porras Barrenechea"@es .
+
+ent:prefectura a voc:Institución ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/prefectura> ;
+    skos:prefLabel "Prefectura"@es .
+
+ent:purísima_concepción a voc:Evento ;
+    skos:prefLabel "Purísima Concepción"@es .
+
+ent:quilca a voc:Lugar ;
+    skos:prefLabel "Quilca"@es .
+
+ent:quito a voc:Lugar ;
+    skos:prefLabel "Quito"@es .
+
+ent:ramón_borica a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/ram_n_borica> ;
+    skos:prefLabel "Ramón Borica"@es .
+
+ent:real_cédula a voc:Institución ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/real_c_dula> ;
+    skos:prefLabel "Real Cédula"@es .
+
+ent:real_orden a voc:Evento ;
+    skos:prefLabel "Real Orden"@es .
+
+ent:regimiento_de_dragones a voc:Institución ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/regimiento_de_dragones> ;
+    skos:prefLabel "Regimiento De Dragones"@es .
+
+ent:res a voc:Otro ;
+    skos:prefLabel "Res"@es .
+
+ent:resolución a voc:Otro ;
+    skos:prefLabel "Resolución"@es .
+
+ent:reyes_traslado a voc:Evento ;
+    skos:prefLabel "Reyes Traslado"@es .
+
+ent:román_de_aulestia a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/rom_n_de_aulestia> ;
+    skos:prefLabel "Román De Aulestia"@es .
+
+ent:rosa_morales a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/rosa_morales> ;
+    skos:prefLabel "Rosa Morales"@es .
+
+ent:rosa_santibáñez a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/rosa_santib_ez> ;
+    skos:prefLabel "Rosa Santibáñez"@es .
+
+ent:ruben_vargas_ugarte a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/ruben_vargas_ugarte> ;
+    skos:prefLabel "Ruben Vargas Ugarte"@es .
+
+ent:salitrera_watson a voc:Otro ;
+    skos:prefLabel "Salitrera Watson"@es .
+
+ent:san_juan_de_lucanas a voc:Lugar ;
+    skos:prefLabel "San Juan De Lucanas"@es .
+
+ent:san_martín a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/san_mart_n> ;
+    skos:prefLabel "San Martín"@es .
+
+ent:santa_catalina_de_sena a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/santa_catalina_de_sena> ;
+    skos:prefLabel "Santa Catalina De Sena"@es .
+
+ent:santiago a voc:Lugar ;
+    skos:prefLabel "Santiago"@es .
+
+ent:santo_oficio a voc:Institución ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/santo_oficio> ;
+    skos:prefLabel "Santo Oficio"@es .
+
+ent:segunda_nominación a voc:Evento ;
+    skos:prefLabel "Segunda Nominación"@es .
+
+ent:señora_santa_ana a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/se_ora_santa_ana> ;
+    skos:prefLabel "Señora Santa Ana"@es .
+
+ent:tesorero a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/tesorero> ;
+    skos:prefLabel "Tesorero"@es .
+
+ent:tesorería_general a voc:Institución ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/tesorer_a_general> ;
+    skos:prefLabel "Tesorería General"@es .
+
+ent:tomás_loayza a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/tom_s_loayza> ;
+    skos:prefLabel "Tomás Loayza"@es .
+
+ent:toribio_ramírez_de_arellano a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/toribio_ram_rez_de_arellano> ;
+    skos:prefLabel "Toribio Ramírez De Arellano"@es .
+
+ent:trinidad_morán a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/trinidad_mor_n> ;
+    skos:prefLabel "Trinidad Morán"@es .
+
+ent:trujillo a voc:Lugar ;
+    skos:prefLabel "Trujillo"@es .
+
+ent:tumbes a voc:Lugar ;
+    skos:prefLabel "Tumbes"@es .
+
+ent:túpac_amaru a voc:Evento ;
+    skos:prefLabel "Túpac Amaru"@es .
+
+ent:universidad_de_lima a voc:Institución ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/universidad_de_lima> ;
+    skos:prefLabel "Universidad De Lima"@es .
+
+ent:urubamba a voc:Lugar ;
+    skos:prefLabel "Urubamba"@es .
+
+ent:ventura_lavalle a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/ventura_lavalle> ;
+    skos:prefLabel "Ventura Lavalle"@es .
+
+ent:ventura_marcó_del_pont a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/ventura_marc_del_pont> ;
+    skos:prefLabel "Ventura Marcó Del Pont"@es .
+
+ent:vitor a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/vitor> ;
+    skos:prefLabel "Vitor"@es .
+
+ent:watson a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/watson> ;
+    skos:prefLabel "Watson"@es .
+
+ent:zervilión a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/zervili_n> ;
+    skos:prefLabel "Zervilión"@es .
+
+<http://ira.pucp.edu.pe/entidad/zonas_perdidas_10_%_antigua_signatura_a63
+palabras_clave:_juan_de_la_cueva> a voc:Otro ;
+    skos:prefLabel """Zonas Perdidas 10 %. Antigua Signatura A63
+Palabras Clave: Juan De La Cueva"""@es .
+
+ent:antonio_sancho_dávila a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/antonio_sancho_d_vila> ;
+    skos:prefLabel "Antonio Sancho Dávila"@es .
+
+ent:bellavista a voc:Lugar ;
+    skos:prefLabel "Bellavista"@es .
+
+ent:huanchaco a voc:Lugar ;
+    skos:prefLabel "Huanchaco"@es .
+
+ent:iquitos a voc:Lugar ;
+    skos:prefLabel "Iquitos"@es .
+
+ent:josé_de_la_riva-agüero a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/jos_de_la_riva_ag_ero> ;
+    skos:prefLabel "José De La Riva-Agüero"@es .
+
+ent:luis_carrillo a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/luis_carrillo> ;
+    skos:prefLabel "Luis Carrillo"@es .
+
+ent:manuel_mendiburu a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/manuel_mendiburu> ;
+    skos:prefLabel "Manuel Mendiburu"@es .
+
+ent:manuel_menéndez a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/manuel_men_ndez> ;
+    skos:prefLabel "Manuel Menéndez"@es .
+
+ent:polilla a voc:Otro ;
+    skos:prefLabel "Polilla"@es .
+
+ent:reyes a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/reyes> ;
+    skos:prefLabel "Reyes"@es .
+
+ent:san_lorenzo a voc:Lugar ;
+    skos:prefLabel "San Lorenzo"@es .
+
+ent:tacna a voc:Lugar ;
+    skos:prefLabel "Tacna"@es .
+
+ent:tiburcio_de_mendoza_y_ríos a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/tiburcio_de_mendoza_y_r_os> ;
+    skos:prefLabel "Tiburcio De Mendoza Y Ríos"@es .
+
+ent:borrador a voc:Otro ;
+    skos:prefLabel "Borrador"@es .
+
+ent:callao a voc:Lugar ;
+    skos:prefLabel "Callao"@es .
+
+ent:cuzco a voc:Lugar ;
+    skos:prefLabel "Cuzco"@es .
+
+ent:domingo_nieto a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/domingo_nieto> ;
+    skos:prefLabel "Domingo Nieto"@es .
+
+ent:domingo_ramírez_de_arellano a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/domingo_ram_rez_de_arellano> ;
+    skos:prefLabel "Domingo Ramírez De Arellano"@es .
+
+ent:felipe_sancho_dávila a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/felipe_sancho_d_vila> ;
+    skos:prefLabel "Felipe Sancho Dávila"@es .
+
+ent:josé_rivero a voc:Persona ;
+    owl:sameAs <http://ira.pucp.edu.pe/entidades/jos_rivero> ;
+    skos:prefLabel "José Rivero"@es .
+
+ent:los_reyes a voc:Evento ;
+    skos:prefLabel "Los Reyes"@es .
+
+ent:arequipa a voc:Lugar ;
+    skos:prefLabel "Arequipa"@es .
+
+ent:lima a voc:Lugar ;
+    skos:prefLabel "Lima"@es .
+
